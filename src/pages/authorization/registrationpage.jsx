@@ -1,0 +1,72 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useContext } from "react";
+import { Form, Card, Button } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom";
+import { Users } from "../../Context/Users";
+
+function registrationpage() {
+  const nav = useNavigate();
+  const { state, setState } = useContext(Users);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const first = e.target.first.value;
+    const last = e.target.last.value;
+    const email = e.target.email.value;
+    const username = e.target.user.value;
+    const pass = e.target.pass.value;
+    const dup = [...state];
+    const result = dup.filter(
+      (a) =>
+        a.username == e.target.user.value
+    );
+    if(result!=""){
+      alert('username already taken')
+    }else if(pass<9){
+      alert('password must be minimum of 8 characters')
+    }
+    else{
+    setState([
+      ...state,
+      {
+        id: Math.random(),
+        firstname: first,
+        lastname: last,
+        email: email,
+        username: username,
+        password: pass,
+        userProduct: [],
+      },
+    ]);
+    e.target.reset();
+    nav("/login");
+  }
+  }
+  return (
+    <div>
+      <h1 className="text-center mt-5">SignUp Now !</h1>
+      <Card className="container   p-3 mt-5 p-5" style={{maxWidth:"400px"}}>
+        <form className="d-flex  flex-column  gap-3 " onSubmit={handleSubmit}>
+          <Form.Control
+            type="text"
+            placeholder="First Name"
+            id="first"
+            required
+          />
+          <Form.Control type="text" placeholder="Last Name" id="last" />
+          <Form.Control type="email" placeholder="Email" id="email" />
+          <Form.Control type="text" placeholder="Username" id="user" />
+          <Form.Control type="password" placeholder="Password" id="pass" />
+          <Button type="submit">Submit</Button>
+        </form>
+        <Link to="/login">Already have an account ?</Link>
+      </Card>
+
+      <div className="text-center mt-3">
+        <Button onClick={() => nav("/")}>Back to Home</Button>
+      </div>
+    </div>
+  );
+}
+
+export default registrationpage;
