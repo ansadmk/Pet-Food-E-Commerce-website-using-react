@@ -7,9 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 function loginpage() {
   const { setCur, state } = useContext(Users);
   const nav = useNavigate();
-  // window.onpopstate = () => {
-  //   nav(`/login`);
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,11 +15,15 @@ function loginpage() {
       (a) =>
         a.username == e.target.user.value && a.password == e.target.pass.value
     );
-    if (result == "") {
+
+    if (e.target.user.value == "Admin" && e.target.pass.value == "Admin") {
+      nav("/adminhome");
+      setCur((a) => (a = "Admin"));
+    } else if (result == "") {
       alert("Wrong password or username");
     } else {
       setCur((a) => (a = result[0].id));
-      nav(`/main/${result[0].firstname +""+ result[0].lastname}`);
+      nav(`/main/${result[0].firstname + "" + result[0].lastname}`);
       console.log("sucess");
     }
 
@@ -32,8 +33,8 @@ function loginpage() {
 
   return (
     <div>
-      <h1 className="mt-5 text-center">Login</h1>
-      <Card className="container p-5  mt-5" style={{maxWidth:"400px"}}>
+      <h1 className="mt-5 text-center bg-white w-50 m-auto">Login</h1>
+      <Card className="container p-5 w-75  mt-5" style={{ maxWidth: "400px" }}>
         <form className="d-flex flex-column gap-3" onSubmit={handleSubmit}>
           <Form.Control type="text" id="user" placeholder="@Username" />
           <Form.Control type="password" id="pass" placeholder="@password" />

@@ -16,36 +16,33 @@ function registrationpage() {
     const username = e.target.user.value;
     const pass = e.target.pass.value;
     const dup = [...state];
-    const result = dup.filter(
-      (a) =>
-        a.username == e.target.user.value
-    );
-    if(result!=""){
-      alert('username already taken')
-    }else if(pass<9){
-      alert('password must be minimum of 8 characters')
+    const result = dup.filter((a) => a.username == e.target.user.value);
+    if (result != "" || username == "Admin") {
+      alert("username already taken");
+    } else if (pass < 9) {
+      alert("password must be minimum of 8 characters");
+    } else {
+      setState([
+        ...state,
+        {
+          id: Math.random(),
+          firstname: first,
+          lastname: last,
+          email: email,
+          username: username,
+          password: pass,
+          userProduct: [],
+          orderlist: [],
+        },
+      ]);
+      e.target.reset();
+      nav("/login");
     }
-    else{
-    setState([
-      ...state,
-      {
-        id: Math.random(),
-        firstname: first,
-        lastname: last,
-        email: email,
-        username: username,
-        password: pass,
-        userProduct: [],
-      },
-    ]);
-    e.target.reset();
-    nav("/login");
-  }
   }
   return (
     <div>
-      <h1 className="text-center mt-5">SignUp Now !</h1>
-      <Card className="container   p-3 mt-5 p-5" style={{maxWidth:"400px"}}>
+      <h1 className="text-center mt-5 bg-white w-50 m-auto">SignUp Now !</h1>
+      <Card className="container   p-3 mt-5 p-5 w-75" >
         <form className="d-flex  flex-column  gap-3 " onSubmit={handleSubmit}>
           <Form.Control
             type="text"

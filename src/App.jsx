@@ -2,61 +2,30 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Login from "./pages/authorization/loginpage";
 import Register from "./pages/authorization/registrationpage";
 import { Users } from "./Context/Users";
-import { useEffect, useState } from "react";
-import Homepage from "./pages/Homepage";
-import Main from "./pages/mainpage";
-import BrowseProduct from "./pages/BrowseProduct";
-import ProductDetails from "./pages/ProductDetails";
-import Cart from "./pages/Cart";
-import PaymentSection from "./pages/PaymentSection";
+import {  useState } from "react";
+import Homepage from "./pages/userSide/Homepage";
+import Main from "./pages/userSide/mainpage";
+import BrowseProduct from "./pages/userSide/BrowseProduct";
+import ProductDetails from "./pages/userSide/ProductDetails";
+import Cart from "./pages/userSide/Cart";
+import PaymentSection from "./pages/userSide/PaymentSection";
+import Adminhome from "./pages/adminSide/adminhome";
+import Userlist from "./pages/adminSide/Userlist";
+import Productlist from "./pages/adminSide/Productlist";
+import ProductDetailsAdmin from "./pages/adminSide/ProductDetailsAdmin";
+import UserDetailsAdmin from "./pages/adminSide/UserDetailsAdmin";
+import Addproduct from "./pages/adminSide/addproduct";
+import { AllUsers } from "./data/AllUsers";
+import { Allproducts } from "./data/Allproducts";
+
+
 
 function App() {
   var [Total, setTotal] = useState(0);
   const [cur, setCur] = useState("");
-  const [state, setState] = useState([{
-    id: 0.2,
-    firstname: "a",
-    lastname: "m",
-    email: "a",
-    username: "a",
-    password: 1,
-    userProduct: [],
-    
-  }]);
-  const [product, setProduct] = useState([
-    {
-      id: 0,
-      qty: 1,
-      catgory: "cat",
-      name: "Cat Dress",
-      price: 100,
-      img: "https://images.pexels.com/photos/11187356/pexels-photo-11187356.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    },
-    {
-      id: 1,
-      qty: 1,
-      catgory: "dog",
-      name: "Dog Dress",
-      price: 200,
-      img: "https://images.pexels.com/photos/14540941/pexels-photo-14540941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 2,
-      qty: 1,
-      catgory: "cat",
-      name: "Cat food",
-      price: 300,
-      img: "https://images.pexels.com/photos/9968610/pexels-photo-9968610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 3,
-      qty: 1,
-      catgory: "dog",
-      name: "dog food",
-      price: 400,
-      img: "https://images.pexels.com/photos/8434635/pexels-photo-8434635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-  ]);
+  const [state, setState] = useState(AllUsers);
+  const [product, setProduct] = useState(Allproducts);
+  
 
   return (
     <Users.Provider
@@ -68,7 +37,7 @@ function App() {
         cur,
         setCur,
         Total,
-        setTotal,
+        setTotal
       }}
     >
       <Routes>
@@ -76,6 +45,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home/:id" element={<Homepage />} />
+        <Route path="/adminhome" element={<Adminhome/>}>
+          <Route index element={<Userlist/>} />
+          <Route path="userlist" element={<Userlist/>} />
+          <Route path="Productlist" element={<Productlist/>} />
+          <Route path="ProductDetails/:id" element={<ProductDetailsAdmin/>} />
+          <Route path="UsersDetails/:id" element={<UserDetailsAdmin/>} />
+          <Route path="addproduct" element={<Addproduct/>}/>
+
+        </Route>
         <Route path="/main" element={<Main />}>
           <Route index element={<Homepage />} />
           <Route path=":id" element={<Homepage />} />

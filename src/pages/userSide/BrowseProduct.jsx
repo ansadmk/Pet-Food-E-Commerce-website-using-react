@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Users } from "../Context/Users";
+import { Users } from "../../Context/Users";
 import { useContext, useState } from "react";
 import { Form, Button, Row } from "react-bootstrap";
-import Map from "../Components/Map";
+import Map from "../../Components/Map";
 
 function BrowseProduct() {
   const [arr, setArr] = useState("");
@@ -12,36 +12,57 @@ function BrowseProduct() {
   const { p } = useParams();
 
   if (p == "Cat") {
-    var catprod = product.filter((a) => a.catgory == "cat");
+    var catprod = product.filter((a) => a.category == "cat");
   } else if (p == "Dog") {
-    var dogprod = product.filter((a) => a.catgory == "dog");
+    var dogprod = product.filter((a) => a.category == "dog");
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (p == "Cat") {
       var arr1 = catprod.filter(
-        (a) => a.name == e.target.get.value || a.catgory == e.target.get.value
+        (a) => a.name == e.target.get.value || a.category == e.target.get.value
       );
     } else if (p == "Dog") {
       var arr1 = dogprod.filter(
-        (a) => a.name == e.target.get.value || a.catgory == e.target.get.value
+        (a) => a.name == e.target.get.value || a.category == e.target.get.value
       );
     } else {
       var arr1 = product.filter(
-        (a) => a.name == e.target.get.value || a.catgory == e.target.get.value
+        (a) => a.name == e.target.get.value || a.category == e.target.get.value
       );
     }
     setArr((a) => (a = arr1));
     e.target.reset();
   };
+
+  const handleChange = (e) => {
+    const searchValue = e.target.value.toLowerCase();
+    if (p == "Cat") {
+      var arr1 = catprod.filter(
+        (a) => a.name.toLowerCase().slice(0, searchValue.length) == searchValue
+      );
+    } else if (p == "Dog") {
+      var arr1 = dogprod.filter(
+        (a) => a.name.toLowerCase().slice(0, searchValue.length) == searchValue
+      );
+    } else {
+      var arr1 = product.filter(
+        (a) => a.name.toLowerCase().slice(0, searchValue.length) == searchValue
+      );
+    }
+    setArr((a) => (a = arr1));
+  };
   return (
     <div>
-      <h1 className="text-center mt-3">Browse Products of {p}</h1>
+      <h1 className="text-center mt-3 bg-white w-50 rounded-5 m-auto">
+        Browse Products of {p}
+      </h1>
       <form className="d-flex container mt-5" onSubmit={handleSubmit}>
         <Form.Control
           id="get"
           className=" ms-0 me-1 m-auto border-5 shadow border-dark-subtle w-50"
+          onChange={handleChange}
         />{" "}
         <Button variant="dark" type="submit">
           search
@@ -50,7 +71,7 @@ function BrowseProduct() {
           all
         </Button>
       </form>
-      <Row className=" container m-auto mt-5 gap-0">
+      <Row className=" container m-auto p-0 mt-5 ">
         {p == "Cat" ? (
           arr == "" ? (
             <Map value={catprod} />
