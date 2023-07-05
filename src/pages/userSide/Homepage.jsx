@@ -45,9 +45,9 @@ function Homepage() {
      {/* <section >
       <img src="https://i.pinimg.com/564x/f4/69/b7/f469b70b8893936625ca0d5b20089455.jpg" className="w-100 h-75 container" alt="" />
      </section> */}
-     <section className=" container w-50 bg-white p-5 m-auto rounded-4">
+     <section className=" container w-50 bg-white p-1 m-auto rounded-4">
       <h1 className="text-center">Our Brand Partners</h1>
-      <div className="row container w-50 bg-white p-5 m-auto rounded-4">
+      <div className="row container w-50 bg-white p-1 m-auto rounded-4">
         <img src="https://brandongaille.com/wp-content/uploads/2013/08/California-Natural-Company-Logo.jpg" className="img-fliud col-2" />
         <img src="https://brandongaille.com/wp-content/uploads/2013/08/Bil-Jac-Company-Logo.jpg" className="img-fliud col-2" />
         <img src="https://brandongaille.com/wp-content/uploads/2013/08/Castro-Pollux-Company-Logo.jpg"  className="img-fliud col-2"/>
