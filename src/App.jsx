@@ -25,6 +25,7 @@ function App() {
   const [cur, setCur] = useState("");
   const [state, setState] = useState(AllUsers);
   const [product, setProduct] = useState(Allproducts);
+  const [arr, setArr] = useState("");
   
 
   return (
@@ -37,7 +38,8 @@ function App() {
         cur,
         setCur,
         Total,
-        setTotal
+        setTotal,
+        arr, setArr
       }}
     >
       <Routes>

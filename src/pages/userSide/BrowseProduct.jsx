@@ -6,8 +6,8 @@ import { Form, Button, Row } from "react-bootstrap";
 import Map from "../../Components/Map";
 
 function BrowseProduct() {
-  const [arr, setArr] = useState("");
-  const { product } = useContext(Users);
+  
+  const { product,arr,setArr } = useContext(Users);
 
   const { p } = useParams();
 

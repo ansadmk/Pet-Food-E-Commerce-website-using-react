@@ -5,11 +5,12 @@ import { useContext } from "react";
 import { Users } from "../../Context/Users";
 
 function mainpage() {
-  const { cur, setCur,state } = useContext(Users);
-  const arr=[...state]
+  const { cur, setCur,state,product,arr,setArr } = useContext(Users);
+  const arr1=[...state]
+  const {  } = useContext(Users);
   if (cur!="") {
     
-    const userobj=arr.filter(a=>a.id==cur)
+    const userobj=arr1.filter(a=>a.id==cur)
     var len=userobj[0].userProduct.length
   }
   const nav = useNavigate();
@@ -39,13 +40,13 @@ function mainpage() {
               </div>
               <Link className="me-2    mb-2" to="/main/pro/Cat">
                 {" "}
-                <Button className="bg-black border-0 hover">Cat</Button>
+                <Button className="bg-black border-0 hover" onClick={()=>setArr(b=>b=product.filter((a) => a.category == "cat"))}>Cat</Button>
               </Link>
               <Link className="me-2 mb-2" to="/main/pro/Dog">
-                <Button className="bg-black border-0 hover">Dog</Button>
+                <Button className="bg-black border-0 hover" onClick={()=>setArr(b=>b=product.filter((a) => a.category == "dog"))}>Dog</Button>
               </Link>
               <Link className="me-2 mb-2" to="/main/pro/all">
-                <Button className="bg-black border-0 hover">Products</Button>
+                <Button className="bg-black border-0 hover" onClick={()=>setArr(b=>b=[...product])}>Products</Button>
               </Link>
                <div className="d-flex gap-2">{cur != "" ? (
                 <Button
