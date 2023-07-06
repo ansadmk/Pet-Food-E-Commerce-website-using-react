@@ -26,7 +26,7 @@ function adminhome() {
           </Button>
         </div>
       </Col>
-      <Col className="h-100">
+      <Col className="h-100 overflow-auto">
         <Row className=" h-25 d-flex align-items-center ">
           <h1 className="text-center">Hello Admin </h1>{" "}
           <div className="text-center">
@@ -34,7 +34,7 @@ function adminhome() {
               Logout
             </Button>
           </div>
-        </Row>
+        </Row >
         <Outlet />
       </Col>
     </Row>
