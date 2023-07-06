@@ -7,8 +7,8 @@ function AdminMap({ dup1, product, nav, setDup }) {
         <h1>Nothing to see here....</h1>
       ) : (
         dup1.map((a, index) => (
-          <Card className="m-2 p-3 rounded-4 hover d-inline p-0 m-0 ">
-            <div onClick={() => nav(`/adminhome/ProductDetails/${a.id}`)}>
+          <Card className="m-2 p-3 rounded-4 hover d-inline p-0 m-0 shadow">
+            <div onClick={() => nav(`/adminhome/ProductDetails/${a.id}`)} className="d-flex ">
               {" "}
               <img
                 className=" w-25"

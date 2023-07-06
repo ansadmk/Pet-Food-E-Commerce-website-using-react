@@ -17,6 +17,7 @@ import UserDetailsAdmin from "./pages/adminSide/UserDetailsAdmin";
 import Addproduct from "./pages/adminSide/addproduct";
 import { AllUsers } from "./data/AllUsers";
 import { Allproducts } from "./data/Allproducts";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 

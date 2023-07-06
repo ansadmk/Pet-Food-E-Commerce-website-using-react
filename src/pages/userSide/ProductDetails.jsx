@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { Users } from "../../Context/Users";
 import { useContext } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import { Button } from "react-bootstrap";
 
 function ProductDetails() {

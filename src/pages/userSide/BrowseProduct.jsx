@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import { Users } from "../../Context/Users";
 import { useContext, useState } from "react";
 import { Form, Button, Row } from "react-bootstrap";

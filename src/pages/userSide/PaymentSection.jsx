@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import { Card, Button } from "react-bootstrap";
 import { Users } from "../../Context/Users";
 

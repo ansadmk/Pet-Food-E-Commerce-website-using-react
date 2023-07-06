@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import { Form, Card, Button } from "react-bootstrap";
 import { Users } from "../../Context/Users";
 import { useContext } from "react";

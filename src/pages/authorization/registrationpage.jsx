@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import { useContext } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";

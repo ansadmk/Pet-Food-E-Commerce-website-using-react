@@ -37,11 +37,12 @@ function ProductDetails() {
         <Card style={{ maxHeight: "650px", maxWidth: "300px" }}>
           <Card.Img
             src={objdup.img}
-            style={{ maxHeight: "300px", maxWidth: "300px" }}
+            style={{ maxHeight: "150px", maxWidth: "100px" }}
+            className="m-auto"
           />
-          <Card.Body>
+          <Card.Body >
             <Card.Title>
-              <h1>{objdup.name}</h1>
+              <h6>{objdup.name}</h6>
             </Card.Title>
             <Card.Title>
               <h5>${objdup.price}</h5>

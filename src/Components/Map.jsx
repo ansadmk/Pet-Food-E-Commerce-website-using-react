@@ -1,5 +1,5 @@
 import { Card, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import { useNavigate } from "react-router-dom";
 
 function Map({ value }) {
@@ -11,9 +11,10 @@ function Map({ value }) {
           <Card
             style={{ maxHeight: "500px", maxWidth: "300px",minHeight: "500px", minWidth: "300px" }}
             onClick={() => nav(`/main/Details/${a.id}`)}
-            className="container hover p-1"
+            className="container hover p-1 shadow"
           >
             <Card.Img
+              className="m-auto"
               src={a.img}
               style={{ maxHeight: "300px", maxWidth: "250px",minHeight: "300px", minWidth: "250px" }}
             />

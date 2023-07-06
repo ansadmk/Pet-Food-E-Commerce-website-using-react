@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Users } from "../../Context/Users";
 import { useContext, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import CartMap from "../../Components/cartMap";
 import { Row } from "react-bootstrap";
 import Comptotal from "../../Components/total";

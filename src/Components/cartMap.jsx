@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+ 
 import { memo, useContext, useState } from "react";
 
 import { Users } from "../Context/Users";
@@ -15,15 +15,15 @@ function CartMap({ value, index }) {
     <>
       {value.map((a, i) => (
         <div
-          style={{ maxHeight: "800px", maxWidth: "500px" }}
-          className="m-auto border-0 mt-5 d-flex gap-5 "
+          
+          className="m-auto border-0 mt-5 d-flex p-3 gap-1 row bg-white "
         >
           <img
             src={a.img}
             style={{ maxHeight: "500px", maxWidth: "300px" }}
-            className="rounded-4 img-fluid ms-3 "
+            className="rounded-4 img-fluid ms-3 col-6 "
           />
-          <div className="d-flex flex-column gap-5">
+          <div className="d-flex flex-column  col-12 container col-lg-6">
             <div className="">
               <h1>{a.name}</h1>
             </div>
