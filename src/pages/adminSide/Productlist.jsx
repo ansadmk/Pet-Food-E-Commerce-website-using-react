@@ -15,7 +15,7 @@ function Productlist() {
   const Dogprod = all.filter((a) => a.category == "dog");
 
   return (
-    <Row className="bg-dark-subtle h-75 ">
+    <div className="bg-dark-subtle h-75 ">
       <h1 className="text-center mt-5">Product List</h1>
       <div className="text-center">
         <Button onClick={() => setDup(Catprod)}>Cat</Button>&nbsp;&nbsp;
@@ -38,7 +38,7 @@ function Productlist() {
           all={all}
         />
       </Card>
-    </Row>
+    </div>
   );
 }
 

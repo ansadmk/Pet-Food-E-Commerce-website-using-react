@@ -7,16 +7,16 @@ function AdminMap({ dup1, product, nav, setDup }) {
         <h1>Nothing to see here....</h1>
       ) : (
         dup1.map((a, index) => (
-          <Card className="m-2 p-3 rounded-4 hover d-inline p-0 m-0 shadow">
-            <div onClick={() => nav(`/adminhome/ProductDetails/${a.id}`)} className="d-flex ">
+          <Card className="m-2 p-3 rounded-4 hover d-inline p-0 m-0 shadow w-100">
+            <div onClick={() => nav(`/adminhome/ProductDetails/${a.id}`)} className="d-flex w-100 flex-column flex-lg-row ">
               {" "}
               <img
-                className=" w-25"
+                className=" w-50 img-fluid"
                 style={{ maxHeight: "125px", maxWidth: "75px" }}
                 src={a.img}
               />{" "}
-              <div className="d-inline-flex ms-5 flex-column">
-                <h1>{a.name}</h1> <h2>${a.price}</h2>
+              <div className=" ms-5 d-flex flex-lg-column h-50 w-100 ">
+                <p>{a.name}</p> <p>${a.price}</p>
               </div>{" "}
             </div>
             <Button
