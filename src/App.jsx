@@ -48,7 +48,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home/:id" element={<Homepage />} />
-        <Route path="/adminhome" element={<Adminhome/>}>
+        <Route path="/adminhome" element={cur=="Admin"?<Adminhome/>:<Login/>}>
           <Route index element={<Userlist/>} />
           <Route path="userlist" element={<Userlist/>} />
           <Route path="Productlist" element={<Productlist/>} />

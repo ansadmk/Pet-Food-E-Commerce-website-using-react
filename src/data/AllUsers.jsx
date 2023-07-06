@@ -1,20 +1,12 @@
-export const AllUsers=[{
-    id: 0.1,
-    firstname: `a`,
-    lastname: `m`,
-    email: `a`,
-    username: `a`,
-    password: 1,
-    userProduct: [],
-  
-  },
+export const AllUsers=[
+    
   {
     id: 0.2,
     firstname: `Mohemed ansad`,
     lastname: `mk`,
     email: `ansadmk@gmail.com`,
     username: `anu`,
-    password: 1,
+    password: 12345678,
     userProduct: [],
     
     
@@ -25,7 +17,7 @@ export const AllUsers=[{
     lastname: `Doe`,
     email: `Jondoe@gmail.com`,
     username: `John`,
-    password: 1,
+    password: 12345678,
     userProduct: [],
     
   },
@@ -35,7 +27,7 @@ export const AllUsers=[{
     lastname: `pm`,
     email: `irfanpm@gmail.com`,
     username: `irfan`,
-    password: 1,
+    password: 12345678,
     userProduct: [],
     
   },
@@ -45,7 +37,7 @@ export const AllUsers=[{
     lastname: `ek`,
     email: `Munaverek@gmail.com`,
     username: `kuttimon`,
-    password: 1,
+    password: 12345678,
     userProduct: [],
     orderlist:[]
   }

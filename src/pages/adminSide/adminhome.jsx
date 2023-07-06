@@ -4,6 +4,7 @@ import { Users } from "../../Context/Users";
 import { Outlet, useNavigate } from "react-router-dom";
 
 function adminhome() {
+  const {setCur}=useContext(Users)
   console.log("addprod");
   const nav = useNavigate();
   return (
@@ -29,7 +30,7 @@ function adminhome() {
         <Row className=" h-25 d-flex align-items-center ">
           <h1 className="text-center">Hello Admin </h1>{" "}
           <div className="text-center">
-            <Button onClick={() => nav("/login")} className="container w-25">
+            <Button onClick={() => {setCur(b=>b="");nav("/login");}} className="container w-25">
               Logout
             </Button>
           </div>
