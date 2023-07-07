@@ -34,7 +34,7 @@ function Addproduct() {
     e.target.reset();
   };
   return (
-    <Row className="bg-dark-subtle h-75  ">
+    <Row className="bg-dark-subtle h-100  ">
       <Col className="m-auto" lg={3}>
         <Card style={{ maxHeight: "650px", maxWidth: "300px" }}>
           <Card.Body>

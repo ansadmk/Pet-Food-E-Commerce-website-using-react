@@ -10,7 +10,7 @@ function UsersDetails() {
   const objdup = { ...dup1[0] };
   console.log("addprod");
   return (
-    <Row className="bg-dark-subtle h-75  ">
+    <Row className="bg-dark-subtle h-100  ">
       <Col className="m-auto" lg={3}>
         <Card style={{ maxHeight: "500px", maxWidth: "300px" }}>
           <Card.Body>

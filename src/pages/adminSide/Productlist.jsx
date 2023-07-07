@@ -15,19 +15,19 @@ function Productlist() {
   const Dogprod = all.filter((a) => a.category == "dog");
 
   return (
-    <div className="bg-dark-subtle h-75 ">
-      <h1 className="text-center mt-5">Product List</h1>
-      <div className="text-center">
+    <div className="bg-dark-subtle h-100 overflow-auto ">
+      <h1 className="text-center mt-5 ">Product List</h1>
+      <div className="justify-content-center mt-3 d-flex gap-1">
         <Button onClick={() => setDup(Catprod)}>Cat</Button>&nbsp;&nbsp;
         <Button onClick={() => setDup(Dogprod)}>Dog</Button>&nbsp;&nbsp;
         <Button onClick={() => setDup((d) => (d = all))}>All</Button>
-        &nbsp;&nbsp;
+        
         <Button onClick={() => nav("/adminhome/addproduct")}>
           + Add Product
         </Button>
       </div>
       <Card
-        className="container w-75 overflow-auto m-auto p-5 rounded-5 mt-0  "
+        className="container w-75 overflow-auto m-auto p-5 rounded-5 mt-2  "
         style={{ maxHeight: "500px" }}
       >
         <AdminMap

@@ -32,8 +32,8 @@ function ProductDetails() {
   };
 
   return (
-    <Row className="bg-dark-subtle h-75  ">
-      <Col className="m-auto" lg={3}>
+    <div className="bg-dark-subtle h-100   ">
+      <div className="m-auto d-flex justify-content-center align-items-center h-100">
         <Card style={{ maxHeight: "650px", maxWidth: "300px" }}>
           <Card.Img
             src={objdup.img}
@@ -76,8 +76,8 @@ function ProductDetails() {
             </Card.Footer>
           </Card.Body>
         </Card>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 }
 

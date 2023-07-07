@@ -59,7 +59,7 @@ function Homepage() {
       </div>
      </section>
      <section className="container bg-white w-50">
-        <div className="row container">
+        <div className="row container d-flex flex-column flex-lg-row">
           <div className="col-6"><h1>Help</h1> <p>Pet care</p> <p>Protien calculator</p> </div>
           <div className="col-6"><h1>About us</h1><p>contact us</p> <p>parambilpeedika</p></div>
           

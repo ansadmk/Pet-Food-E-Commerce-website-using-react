@@ -9,7 +9,7 @@ function Userlist() {
   const nav = useNavigate();
   console.log("addprod");
   return (
-    <Row className="bg-dark-subtle h-75  ">
+    <Row className="bg-dark-subtle h-100 overflow-auto ">
       <h1 className="text-center mt-5">Users List</h1>
       <Card className="container w-75   overflow-auto m-auto p-4 mt-0 rounded-5">
         {dup.map((a) => (
