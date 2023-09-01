@@ -18,22 +18,22 @@ function BrowseProduct() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+     e.preventDefault();
+    const searchValue = e.target.get.value.toLowerCase();
     if (p == "Cat") {
       var arr1 = catprod.filter(
-        (a) => a.name == e.target.get.value || a.category == e.target.get.value
+        (a) => a.name.toLowerCase().slice(0, searchValue.length) == searchValue
       );
     } else if (p == "Dog") {
       var arr1 = dogprod.filter(
-        (a) => a.name == e.target.get.value || a.category == e.target.get.value
+        (a) => a.name.toLowerCase().slice(0, searchValue.length) == searchValue
       );
     } else {
       var arr1 = product.filter(
-        (a) => a.name == e.target.get.value || a.category == e.target.get.value
+        (a) => a.name.toLowerCase().slice(0, searchValue.length) == searchValue
       );
     }
     setArr((a) => (a = arr1));
-    e.target.reset();
   };
 
   const handleChange = (e) => {
